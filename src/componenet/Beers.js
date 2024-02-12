@@ -3,31 +3,24 @@ import SearchBar from './SearchBar';
 import RenderBeerList from './RenderBeerList';
 import '../css/Beers.css';
 
-const Beers = ({ beers, toggleFavourite, lastBeerRef }) => {
+const Beers = ({ beers, toggleFavourite, searchBar, lastBeerRef }) => {
   const beerList = beers.length ? (
-    beers.map((beer, index) => {
-      if (beers.length === index + 1) {
-        return <div ref={lastBeerRef} key={beer.id} />;
-      } else {
-        return (
-          <RenderBeerList
-            beer={beer}
-            toggleFavourite={toggleFavourite}
-            key={beer.id}
-          />
-        );
-      }
-    })
+    <>
+      <SearchBar onSearch={searchBar} />
+      <div className="container">
+        <RenderBeerList beers={beers} toggleFavourite={toggleFavourite} />
+        <div ref={lastBeerRef} />
+      </div>
+    </>
   ) : (
-    <p className="info">Wait until your Beer are Loading......!</p>
+    <p className="info">Wait until your Beers are Loading...</p>
   );
 
   return (
     <main className="App__main">
-      <SearchBar />
-      <div className="container">{beerList}</div>
+      {beerList}
     </main>
   );
-};
+}
 
 export default Beers;
