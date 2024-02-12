@@ -1,0 +1,112 @@
+.container {
+    margin: 1.5rem 1rem;
+}
+
+.card {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 3px solid #010302;
+    border-radius: .5rem;
+    background-color: #e6f5f8;
+    position: relative;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.card:hover {
+    transform: scale(1.05); 
+}
+
+.card__img {
+    height: 20vmax;
+    max-height: 250px;
+}
+
+.card__title {
+    line-height: 1.15;
+    margin: .5rem 0;
+}
+
+.card__text--gray {
+    color: #050303;
+    margin-bottom: .5rem;
+}
+
+.fa-star {
+    position: absolute;
+    top: 5%;
+    right: 15%;
+    font-size: 5rem;
+    color: rgb(251, 18, 6);
+    cursor: pointer;
+}
+
+.info {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+@media (min-width: 411px) {
+    .container {
+        margin: 1.5rem 2rem;
+    }
+
+    .card {
+        display: flex;
+    }
+
+    .card__col {
+        margin-right: 1rem;
+        flex: 1 0 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card__text--sm {
+        text-align: center;
+        margin-top: .5rem;
+    }
+
+    .fa-star {
+        font-size: 1rem;
+        top: 3%;
+        right: 3%;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 0;
+    }
+
+    .card {
+        flex-basis: 48%;
+        max-width: 575px;
+    }
+
+    .info {
+        flex-basis: 100%;
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1358px) {
+    .container {
+        justify-content: space-around;
+        margin: 3rem 2rem;
+    }
+
+    .card {
+        padding-right: 2rem;
+    }
+
+    .fa-star {
+        font-size: 2rem;
+        top: 5%;
+    }
+}

@@ -1,0 +1,79 @@
+.App__header {
+    background-image: url(https://media.istockphoto.com/id/1345665282/vector/beer-foam-realistic-3d-frame-with-white-clean-shampoo-froth-and-soap-bubbles-detergent.jpg?s=612x612&w=0&k=20&c=n3GYddsVTZJaMC5VKYhr7byOieXI9fwOkkV2ez-HziQ=);
+    text-align: center;
+    height: 150px;
+}
+
+.App__title {
+    font-size: 12mm;
+    color: #0e0e0e;
+}
+
+.menu-list__item {
+    margin-bottom: .25rem;
+}
+
+.menu-list__link {
+    display: block;
+    text-decoration: none;
+    color: #1fd9b1;
+    font-weight: 700;
+}
+
+.menu-list__link.active {
+    color: rgb(42, 10, 202);
+}
+
+@media (orientation: landscape) {
+    .App__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .menu-list {
+        display: flex;
+    }
+
+    .menu-list__item {
+        margin: 0 .5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .App__header {
+        margin-top: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .App__title {
+        font-size: 2.5rem;
+    }
+
+    .menu-list__item {
+        margin: 0 1rem;
+    }
+
+    .menu-list__link {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1600px) {
+    .App__header {
+        padding: 2rem;
+    }
+
+    .App__title {
+        font-size: 3.5rem;
+    }
+
+    .menu-list__item {
+        margin: 0 1.5rem;
+    }
+
+    .menu-list__link {
+        font-size: 2rem;
+    }
+}
