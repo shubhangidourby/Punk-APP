@@ -1,4 +1,4 @@
-# Punk-APP
+# Punk-APP - Shubhangi Dourby
 Start command: npm start
 
 Key Features:
