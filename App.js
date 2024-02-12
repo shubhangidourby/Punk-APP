@@ -51,6 +51,42 @@ const App = () => {
     return !!isFavourite;
   };
 
+  const searchBar = beer => {
+    const fetchedItems = [];
+    fetch(`https://api.punkapi.com/v2/beers?beer_name=${beer}&page=1&per_page=80`)
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error(
+            `The connection ended with status ${res.status}${
+              res.statusText ? ': ' + res.statusText : ''
+            }`
+          );
+        }
+      })
+      .then(json => {
+        if (!json.length)
+          return alert("We're sorry, we could not find such a beer :(");
+        json.forEach(item => {
+          const beer = {
+            id: item.id,
+            name: item.name,
+            tagline: item.tagline,
+            firstBrewed: item.first_brewed,
+            desc: item.description,
+            imageURL: item.image_url,
+            isFavourite: checkIfFavourite(item.id),
+          };
+          fetchedItems.push(beer);
+        });
+        setItems(fetchedItems);
+      })
+      .catch(error => {
+        alert(error);
+      });
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -93,6 +129,7 @@ const App = () => {
               <Beers
                 beers={items}
                 toggleFavourite={toggleFavourite}
+                searchBar={searchBar}
                 lastBeerRef={lastBeerRef}
               />
             )}
