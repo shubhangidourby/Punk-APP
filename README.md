@@ -12,3 +12,5 @@ Key Features:
 •	Favorite Feature: Each beer card should include an option (like a star icon or button) to mark the beer as a favorite. Utilize local storage to save and retrieve the user's favorite beers. Ensure that the state of the favorite beers persists even after the browser is refreshed.
 
 •	Favorites Page: Implement a separate page or view to display the user's favorite beers. Provide an option to remove beers from the favorites list.
+
+•	The application is responsive and works well on different devices.
